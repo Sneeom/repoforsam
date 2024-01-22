@@ -1,0 +1,23 @@
+version = 0.1
+[default.pipeline_bootstrap.parameters]
+oidc_provider_url = "https://token.actions.githubusercontent.com"
+oidc_client_id = "sts.amazonaws.com"
+github_org = "sneeom"
+github_repo = "repoforsam"
+deployment_branch = "main"
+oidc_provider = "github-actions"
+permissions_provider = "OpenID Connect (OIDC)"
+
+[dev.pipeline_bootstrap.parameters]
+pipeline_execution_role = "arn:aws:iam::206572126289:role/aws-sam-cli-managed-dev-pipel-PipelineExecutionRole-yL5g4mf348Ky"
+cloudformation_execution_role = "arn:aws:iam::206572126289:role/aws-sam-cli-managed-dev-p-CloudFormationExecutionRo-ZY6yZQ8R38jQ"
+artifacts_bucket = "aws-sam-cli-managed-dev-pipeline-r-artifactsbucket-dswt4iodmslh"
+image_repository = ""
+region = "us-east-1"
+
+[prod.pipeline_bootstrap.parameters]
+pipeline_execution_role = "arn:aws:iam::206572126289:role/aws-sam-cli-managed-prod-pipe-PipelineExecutionRole-FanDA8Zn80di"
+cloudformation_execution_role = "arn:aws:iam::206572126289:role/aws-sam-cli-managed-prod--CloudFormationExecutionRo-Zy7azmQMiKOL"
+artifacts_bucket = "aws-sam-cli-managed-prod-pipeline--artifactsbucket-pfx7ybtpfvrf"
+image_repository = ""
+region = "us-west-2"
